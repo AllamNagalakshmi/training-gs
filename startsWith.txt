@@ -1,0 +1,3 @@
+ String[] arr={"apple","applet","bread","aper"};
+   List<String> str= Arrays.stream(arr).filter(s->s.startsWith("app")).collect(Collectors.toList());
+   System.out.println(str);

@@ -1,0 +1,21 @@
+class Solution {
+  public static void main(String[] args) {
+    String[] s={"CODGE","ODG","LODGES","SODG","mODJ","LODGESSSS"};
+    String tosearch="ODG";
+    System.out.println(longest(s,tosearch));
+    
+  }
+  public static int longest(String[] s,String w1)
+  {
+    int max=0;
+    for(int i=0;i<s.length;i++)
+    {
+         if(s[i].contains(w1))
+         {
+            max=Math.max(max,s[i].length());
+         }
+    }
+    return max;
+
+  }
+}
