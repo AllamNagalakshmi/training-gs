@@ -1,0 +1,38 @@
+class Solution {
+  public static void main(String[] args) {
+    String[][] students = {
+                {"Charles", "84"},
+                {"John", "100"},
+                {"Andy", "37"},
+                {"John", "23"},
+                {"Charles", "20"}
+        };
+
+        System.out.println(average(students));
+    
+  }
+  public static double average(String[][] students)
+  {
+    Map<String,int[]> map=new HashMap<>();
+    for(String[] s:students)
+    {
+      String name=s[0];
+      int marks=Integer.parseInt(s[1]);
+      if(!map.containsKey(name))
+      {
+        map.put(name,new int[]{0,0});
+      }
+      map.get(name)[0]=map.get(name)[0]+marks;
+      map.get(name)[1]++;
+    }
+    Double avgmax=Double.NEGATIVE_INFINITY;
+    for(String s:map.keySet())
+    {
+      int marks=map.get(s)[0];
+      int repeat=map.get(s)[1];
+      double avg= (double)marks/repeat;
+      avgmax=Math.max(avgmax,avg);
+    }
+    return avgmax;
+  }
+}

@@ -1,0 +1,23 @@
+class Solution {
+  public static void main(String[] args) {
+    String s1="honda";
+    System.out.println(reverse(s1));
+   
+  }
+  public static boolean reverse(String s1)
+  {
+    String rev="";
+   // boolean ans=false;
+    for(int i=s1.length()-1;i>=0;i--)
+    {
+      rev=rev+s1.charAt(i);
+    }
+    if(s1.equals(rev))
+    {
+      return true;
+    }
+    return false;
+  }
+  
+}
+

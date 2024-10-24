@@ -1,0 +1,28 @@
+class Solution {
+  public static void main(String[] args) {
+    String s1="racecar";
+    System.out.println(reverse(s1));
+   
+  }
+  public static boolean reverse(String s1)
+  {
+    int left=0;
+    int n=s1.length()-1;
+    int right=n;
+    
+    while(left<right)
+    {
+      if(s1.charAt(left)!=s1.charAt(right))
+      {
+        return false;
+      }
+        left++;
+        right--;   
+    }  
+      
+      return true;
+      
+  }
+  
+}
+
