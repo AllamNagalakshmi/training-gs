@@ -1,0 +1,45 @@
+class Solution {
+  public static void main(String[] args) {
+    int[] arr={2,-1,1,2,2};
+    System.out.println(longestLength(arr));
+   
+  }
+  public static int longestLength(int[] a)
+  {
+    int slow=0;
+    int fast=0;
+    int n=a.length;
+    while(true)
+    {
+      slow=move(slow,a,n);
+      fast=move(fast,a,n);
+      fast=move(fast,a,n);
+      if(slow==fast)
+      {
+        break;
+      }
+      if(slow<0||slow>=n||fast<0||fast>=n)
+      {
+        return -1;
+      }
+    }
+    int longestlength=0;
+    do
+    {
+      slow=move(slow,a,n);
+      longestlength++;
+    }while(slow!=fast);
+    return longestlength;
+  }
+  public static int move(int index,int[] a,int n)
+  {
+    if(a[index]>0)
+    {
+      return (index+a[index])%n;
+    }
+    else
+    {
+      return (index-a[index])%n;
+    }
+  }
+}
