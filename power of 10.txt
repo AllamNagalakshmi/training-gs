@@ -1,0 +1,26 @@
+class Solution {
+  public static void main(String[] args) {
+    System.out.println(isPower(100001));
+  }
+  public static boolean isPower(int num)
+  {
+    boolean power =false;
+    if(num<=0){
+      return false;
+    }
+    while(num>0)
+    {
+      int rem=num%10;
+      if(rem!=0)
+      {
+        break;
+      }
+      num=num/10;
+    }
+    if(num==1)
+    {
+      power=true;
+    }
+    return power;
+  }
+}
