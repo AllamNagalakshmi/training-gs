@@ -1,0 +1,29 @@
+class Solution {
+  public static void main(String[] args) {
+    int[] arr={1,1,1,1,1,1,1};
+    int k=11;
+    System.out.println(minsubArray(arr,k));
+    
+    }
+    public static int minsubArray(int[] arr,int k)
+    {
+      int high=0;
+      int low=0;
+      int currentsum=0;
+      int minWindow=Integer.MAX_VALUE;
+      while(high<arr.length)
+      {
+        currentsum=currentsum+arr[high];
+        high++;
+        while(currentsum>=k)
+        {
+         int currentWindowsize=high-low;
+        minWindow=Math.min(currentWindowsize,minWindow);
+        currentsum=currentsum-arr[low];
+        low++;
+      }
+    }
+    return minWindow==Integer.MAX_VALUE ? 0:minWindow;
+  }
+}
+
